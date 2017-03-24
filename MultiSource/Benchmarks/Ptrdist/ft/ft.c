@@ -67,7 +67,7 @@ _Ptr<Vertices>  MST(_Ptr<Vertices>  graph);
 int debug = 1;
 
 int
-main(int argc, _Array_ptr<_Ptr<char>> argv )
+main(int argc, _Array_ptr<char *> argv : count(argc))
 {
   int            nVertex;
   int            nEdge;

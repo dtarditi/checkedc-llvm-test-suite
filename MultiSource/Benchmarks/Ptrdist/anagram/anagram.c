@@ -279,7 +279,7 @@ void Fatal(char *pchMsg, unsigned u) {
  * byte streams are concatenated, and terminated with a 0.
  */
 
-void ReadDict(_Ptr<char> pchFile) {
+void ReadDict(char *pchFile) {
     _Ptr<FILE> fp = 0;
     // CHECKEDC : automatic checkedc pointer value initializer
     unsigned cWords = 0;
@@ -813,7 +813,7 @@ _Array_ptr<char> GetPhrase(_Array_ptr<char> pch : bounds(achPhrase, achPhrase+25
 // of buildMask function formal parameter
 //char achPhrase _Checked [255];
 
-int Cdecl main(int cpchArgc, char **ppchArgv) {
+int Cdecl main(int cpchArgc, _Array_ptr<char *> ppchArgv : count(cpchArgc)) {
 
     if (cpchArgc != 2 && cpchArgc != 3)
         Fatal("Usage: anagram dictionary [length]\n", 0);
